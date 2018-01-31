@@ -1,0 +1,113 @@
+.w3ls-social-icons-2 {
+    padding: 3em 0;
+}
+
+.w3ls-social-icons-2 i {
+    font-size: 1em;
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 3.5;
+    margin: 0 0.5em 0;
+    border-radius: 50%;
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    border: 1px solid #616161;
+}
+
+.w3ls-social-icons-2 i:hover {
+    background: #0de2f6;
+    color: #fff;
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    border-color: #0de2f6;
+}
+
+@media(max-width: 640px) {
+    .w3ls-social-icons-2 {
+        padding: 2.5em 0;
+    }
+}
+
+@media(max-width: 480px) {
+    .w3ls-social-icons-2 i {
+        font-size: .9em;
+        width: 45px;
+        height: 45px;
+        margin: 0 0.3em 0;
+    }
+}
+
+@media(max-width: 320px) {
+    .w3layouts_gallery_grid1_pos h3 {
+        margin: 1.5em 0 .5em;
+    }
+    .callbacks_tabs {
+        left: 30%;
+    }
+    .agileits-banner-info {
+        padding: 8em 0 0em;
+    }
+    .main-agile,
+    .w3l-overlay {
+        min-height: 330px;
+    }
+    .ab-agile-top {
+        padding: 1em 1em;
+    }
+    .last-agile-2 {
+        padding: 1em 2em;
+    }
+    .last-agile-2 p {
+        margin: 1em 0 2em;
+    }
+    .agile-right-w3l img {
+        min-height: 284px;
+    }
+    .wthree_banner_info_left_grid_left h3 {
+        font-size: 1.1em;
+    }
+    .wthree_banner_info_left_grid_left {
+        padding: 0 .5em;
+    }
+    .wthree_banner_info_left {
+        padding: 0;
+    }
+    .w3l_mail_right {
+        padding: 2em 1em;
+    }
+    .contact-top1 {
+        padding: 2em 1em 2em;
+    }
+    .contact-grid1 input[type="text"],
+    .contact-grid1 input[type="email"],
+    .contact-grid1 textarea {
+        font-size: .9em;
+    }
+    .contact-grid1 input[type="submit"] {
+        width: 46%;
+        font-size: 1em;
+    }
+    .w3ls-social-icons-2 i {
+        font-size: .8em;
+        width: 40px;
+        height: 40px;
+    }
+    .logo-fo h2 a {
+        font-size: .9em;
+    }
+    .modal-content h5 {
+        font-size: 1em;
+        letter-spacing: 0px;
+    }
+    .modal-content p {
+        font-size: .8em;
+    }
+}

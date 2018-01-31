@@ -1,0 +1,26 @@
+/* .home-section {
+    margin-top:800px;
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height:100%;
+    width: 100%;
+    z-index: 0;
+    background-size: cover;
+  } */
+
+  
+  
+  .titan-caption {
+    position: relative;
+    display: table;
+    height: 100%;
+    width: 100%;
+    margin-top:450px;
+  }
+  
+  .caption-content {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+  }

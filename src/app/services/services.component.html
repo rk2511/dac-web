@@ -1,0 +1,98 @@
+<div class="slider_bg">
+  <div class="wrap">
+    <div class="slider">
+      <h2>Our Services</h2>
+      <h3>Any Quote of your Choice!!</h3>
+    </div>
+  </div>
+  </div>
+<div class="main_bg">
+  <div class="wrap">
+    <div class="main">
+<div class="content">
+  <!-- start popup -->
+  <!-- <div id="small-dialog" class="mfp-hide">
+    <div class="pop_up">
+       <h2>Lorem Ipsum is simply dummy text of the printing and industry</h2>
+       <img src="assets/2.jpg" title="image-name">
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic</p>
+      <a class="btn" href="details.html">Read more</a>
+    </div>
+  </div> -->
+  <!-- end popup -->
+    <ul class="folio_list">
+      <!-- <li>
+        <a class="popup-with-zoom-anim" href="#small-dialog">
+          <img src="assets/s4.jpg"  alt="Image" />
+        </a>	
+        <h3>Candid Photography!</h3>
+        <p class="para">Need inputs from you on what needs to be put here!!Kinda like a thirukural!on clicking we can display full details thru popup!!</p>
+        <h4><a class="popup-with-zoom-anim" href="#small-dialog">More details!</a></h4>
+                  
+      </li> -->
+      <li>
+        <a  data-toggle="modal" href="#photopop" (click) = "onServiceItemClick('photo')">
+          <img src="assets/s4.jpg"  alt="Image"/>
+        </a>	
+        <h3>Candid Photography!</h3>
+        <p class="para">Need inputs from you on what needs to be put here!!Kinda like a thirukural!on clicking we can display full details thru popup!!</p>
+        <h4><a  data-toggle="modal" href="#photopop">More details!</a></h4>                
+      </li>
+      <li>
+        <a data-toggle="modal" href="#photopop" (click) = "onServiceItemClick('video')">
+          <img src="assets/s1.jpg"  alt="Image 2" />
+        </a>		
+         <h3>Video Editing</h3>
+         <p class="para">Need inputs from you on what needs to be put here!!Kinda like a thirukural!on clicking we can display full details thru popup!!</p>
+         <h4><a class="popup-with-zoom-anim" href="#small-dialog">More details!</a></h4>
+      </li>
+      <li>
+        <a class="popup-with-zoom-anim" href="#small-dialog">
+          <img src="assets/a.jpg"  alt="Image 2" />
+        </a>						
+         <h3>Enna podradunu therla</h3>
+         <p class="para">Need inputs from you on what needs to be put here!!Kinda like a thirukural!on clicking we can display full details thru popup!!</p>
+         <h4><a class="popup-with-zoom-anim" href="#small-dialog">More details!</a></h4>
+      </li>
+      <li>
+        <a class="popup-with-zoom-anim" href="#small-dialog">
+          <img src="assets/a.jpg"  alt="Image 2" />
+        </a>						
+         <h3>Ingayum therla</h3>
+         <p class="para">Need inputs from you on what needs to be put here!!Kinda like a thirukural!on clicking we can display full details thru popup!!</p>
+         <h4><a class="popup-with-zoom-anim" href="#small-dialog">More Details!</a></h4>
+      </li>
+      <div class="clear"></div>
+    </ul>
+</div>
+</div>
+</div>
+</div>
+
+<div id="photopop" class="modal fade active" data-backdrop="false" role="dialog">
+    <div class="modal-dialog modal-lg">
+  
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">{{ servicetitle }}</h4>
+                <img src="{{ serviceimage }}" style="margin-left:130px" alt="Image" />
+            </div>
+            <div class="modal-body">
+                <ul class="list-group">
+                    <li class="list-group-item list-group-item-success">First item</li>
+                    <li class="list-group-item list-group-item-info">Second item</li>
+                    <li class="list-group-item list-group-item-warning">Third item</li>
+                    <li class="list-group-item list-group-item-danger">Fourth item</li>
+                  </ul>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+  
+    </div>
+  </div>
+
+
