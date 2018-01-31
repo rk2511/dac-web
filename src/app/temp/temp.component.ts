@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { WebService } from '../web.service';
 @Component({
   selector: 'app-temp',
   templateUrl: './temp.component.html',
@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TempComponent implements OnInit {
 
-  constructor() { }
+  messages = [];
 
-  ngOnInit() {
+  constructor(private webService: WebService) { }
+
+  async ngOnInit() {
+
+    const response = await this.webService.getMessages();
+    console.log(response.json());
+    this.messages = response.json();
   }
-
+  
 }

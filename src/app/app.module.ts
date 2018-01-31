@@ -15,7 +15,8 @@ import { BlogComponent } from './blog/blog.component';
 import { ContactComponent } from './contact/contact.component';
 import { VideosComponent } from './videos/videos.component';
 import { RecentComponent } from './recent/recent.component';
-
+import { WebService } from './web.service';
+import { HttpModule } from '@angular/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,9 +35,10 @@ import { RecentComponent } from './recent/recent.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpModule
   ],
-  providers: [],
+  providers: [WebService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
