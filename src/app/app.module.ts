@@ -16,7 +16,7 @@ import { ContactComponent } from './contact/contact.component';
 import { VideosComponent } from './videos/videos.component';
 import { RecentComponent } from './recent/recent.component';
 import { WebService } from './web.service';
-import { HttpModule } from '@angular/http';
+import {HttpClientModule} from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +36,7 @@ import { HttpModule } from '@angular/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpModule
+    HttpClientModule
   ],
   providers: [WebService],
   bootstrap: [AppComponent]

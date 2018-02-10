@@ -13,9 +13,8 @@ export class TempComponent implements OnInit {
 
   async ngOnInit() {
 
-    const response = await this.webService.getMessages();
-    console.log(response.json());
-    this.messages = response.json();
+   // const response = await this.webService.getMessages();
+  //  console.log(response.json());
+  //  this.messages = response.json();
   }
-  
 }

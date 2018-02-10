@@ -1,7 +1,7 @@
-<p>Sidebar workms</p>
 <div id="mySidenav" class="sidenav">
-  <a href="#" id="sb1">Wedding shoots</a>
-  <a href="#" id="sb2">Baby shoot</a>
-  <a href="#" id="sb3">Engagement</a>
-  <a href="#" id="sb4">Video shoots</a>
+  <a id="sb1" [routerLink]="['/gallery','wedding']">Wedding shoots</a>
+  <a id="sb2" [routerLink]="['/gallery','baby']">Baby shoot</a>
+  <a id="sb3" [routerLink]="['/gallery','engage']">Engagement</a>
+  <a id="sb4" [routerLink]="['/gallery','whatever']">Video shoots</a>
 </div>
+<router-outlet></router-outlet>

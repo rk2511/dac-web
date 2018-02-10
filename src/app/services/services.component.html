@@ -10,41 +10,22 @@
   <div class="wrap">
     <div class="main">
 <div class="content">
-  <!-- start popup -->
-  <!-- <div id="small-dialog" class="mfp-hide">
-    <div class="pop_up">
-       <h2>Lorem Ipsum is simply dummy text of the printing and industry</h2>
-       <img src="assets/2.jpg" title="image-name">
-      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic</p>
-      <a class="btn" href="details.html">Read more</a>
-    </div>
-  </div> -->
-  <!-- end popup -->
     <ul class="folio_list">
-      <!-- <li>
-        <a class="popup-with-zoom-anim" href="#small-dialog">
-          <img src="assets/s4.jpg"  alt="Image" />
-        </a>	
-        <h3>Candid Photography!</h3>
-        <p class="para">Need inputs from you on what needs to be put here!!Kinda like a thirukural!on clicking we can display full details thru popup!!</p>
-        <h4><a class="popup-with-zoom-anim" href="#small-dialog">More details!</a></h4>
-                  
-      </li> -->
       <li>
-        <a  data-toggle="modal" href="#photopop" (click) = "onServiceItemClick('photo')">
+        <a  data-toggle="modal" data-target="#photopop" style="cursor: pointer;" (click) = "onServiceItemClick('photo')">
           <img src="assets/s4.jpg"  alt="Image"/>
         </a>	
         <h3>Candid Photography!</h3>
         <p class="para">Need inputs from you on what needs to be put here!!Kinda like a thirukural!on clicking we can display full details thru popup!!</p>
-        <h4><a  data-toggle="modal" href="#photopop">More details!</a></h4>                
+        <h4><a  data-toggle="modal" data-target="#photopop" style="cursor: pointer;" (click) = "onServiceItemClick('photo')">More details!</a></h4>                
       </li>
       <li>
-        <a data-toggle="modal" href="#photopop" (click) = "onServiceItemClick('video')">
+        <a data-toggle="modal" data-target="#photopop" style="cursor: pointer;" (click) = "onServiceItemClick('video')">
           <img src="assets/s1.jpg"  alt="Image 2" />
         </a>		
          <h3>Video Editing</h3>
          <p class="para">Need inputs from you on what needs to be put here!!Kinda like a thirukural!on clicking we can display full details thru popup!!</p>
-         <h4><a class="popup-with-zoom-anim" href="#small-dialog">More details!</a></h4>
+         <h4><a data-toggle="modal" data-target="#photopop" style="cursor: pointer;" (click) = "onServiceItemClick('video')">More details!</a></h4>
       </li>
       <li>
         <a class="popup-with-zoom-anim" href="#small-dialog">

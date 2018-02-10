@@ -1,15 +1,21 @@
-import { Http } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 
 export class WebService {
+galdata: any;
 
+    constructor(private http: HttpClient) {}
 
-    constructor(private http: Http) {}
+    getGallery(type) {
+        // this.http.get('/gallery/' + type).subscribe(data => {
+        //     this.galdata = data;
+        //     console.log('The returned data is ', this.galdata);
+        //   });
 
-    getMessages() {
-        return this.http.get('http://localhost:3000/messages').toPromise();
+          return this.http.get('/gallery/' + type).toPromise();
+        // return this.http.get('http://localhost:3000/messages').toPromise();
     }
 }
