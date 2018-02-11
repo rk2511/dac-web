@@ -1,11 +1,49 @@
-<div id="mySidenav" class="sidenav col-xs-6">
+<!-- <div id="mySidenav" class="sidenav col-xs-6" style="min-height:200px">
   <a id="sb1" [routerLink]="['/gallery','wedding']">Wedding shoots</a>
   <a id="sb2" [routerLink]="['/gallery','baby']">Baby shoot</a>
   <a id="sb3" [routerLink]="['/gallery','engage']">Engagement</a>
   <a id="sb4" [routerLink]="['/gallery','whatever']">Video shoots</a>
-</div>
-<div class="container-fluid">
-<div class="row">
-  <router-outlet></router-outlet>
-</div>
-</div>
+</div> -->
+ <div class="container" > 
+  <div class="row">    
+          <div  class="col-md-12">
+              <ul id="navbox" class="nav nav-pills nav-justified" style="margin-bottom:100px;margin-top:50px">
+                  <li class="active"><a [routerLink]="['/gallery','wedding']">Wedding</a></li>
+                  <li><a [routerLink]="['/gallery','baby']">Baby</a></li>
+                  <li><a [routerLink]="['/gallery','engage']">Engage</a></li>
+                  <li><a [routerLink]="['/gallery','whatever']">Whatever</a></li>
+                </ul>
+      </div>
+  </div>
+ </div>
+
+<div class="container">
+    <div class="row">
+      <div class="col-lg-8">
+          <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+<!-- <div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+        <ul>
+            <li class="active"><a [routerLink]="['/gallery','wedding']">Wedding</a></li>
+            <li><a [routerLink]="['/gallery','baby']">Baby</a></li>
+            <li><a [routerLink]="['/gallery','engage']">Engage</a></li>
+            <li><a [routerLink]="['/gallery','whatever']">Whatever</a></li>
+          </ul>
+    </div>
+  </div>
+</div> -->
+<!-- <div class="container">
+  <div class="row">
+      <div class="sidenav">
+          <a [routerLink]="['/gallery','wedding']">Wedding</a>
+          <a [routerLink]="['/gallery','baby']">Baby</a>
+          <a [routerLink]="['/gallery','engage']">Engage</a>
+          <a [routerLink]="['/gallery','whatever']">Contact</a>
+        </div>
+  </div>
+</div> -->
+

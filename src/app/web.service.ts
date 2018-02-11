@@ -20,6 +20,6 @@ galdata: any;
     }
 
     getHomeSlide() {
-        return this.http.get('/blog').toPromise();
+        return this.http.get('/homeslide').toPromise();
     }
 }

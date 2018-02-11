@@ -111,14 +111,34 @@ export class GalimageComponent implements OnInit, AfterViewInit, AfterViewChecke
    }
 
    onSelectImage(id) {
-     console.log('Its coming heree', id);
+     
+     const igid = 'ig' + id;
+     console.log('Its coming heree', igid);
     jQuery('#myCarousel').carousel(parseInt(id));
 
     $('#myCarousel').on('slid.bs.carousel', function (e) {
       const id1 = $('.item.active').data('slide-number');
      $('#carousel-text').html($('#slide-content-' + id1).html());
     });
+
+    // for modal
+
+    var modal = document.getElementById('myimgModal');
+    var img = document.getElementById(igid);
+    
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    modal.style.display = "block";
+    (<HTMLImageElement>modalImg).src = (<HTMLImageElement>img).src;
+    // var span = document.getElementsByClassName("close")[0];
+    // (<HTMLElement>span).onclick = function() {
+    // modal.style.display = "none";
+    //   }
    }
 
+   onModalClose() {
+    var modal = document.getElementById('myimgModal');
+    modal.style.display = "none";
+   }
 
   }

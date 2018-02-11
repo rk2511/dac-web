@@ -74,11 +74,20 @@ app.use(express.static(__dirname + '/dist'));
 
 // });
 
-// app.get('/gallery/', (req,res) => {
-//     // res.json(messages);
-//     console.log('gallery clicked');
-//        res.send('hello!');
-//  });
+app.get('/homeslide', (req,res) => {
+    console.log('homepage clicked');
+    HomeSlide.find().then((doc) => {
+      if (!doc) {
+          console.log('main slide not fetching');
+        return res.status(404).send();
+      }
+      console.log('fetch success', doc);
+      res.send(doc);
+      
+    }).catch((e) => {
+      res.status(400).send();
+    });
+ });
 
 // app.get('/blog', (req, res) => {
 // console.log('making main request');

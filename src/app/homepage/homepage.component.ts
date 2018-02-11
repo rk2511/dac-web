@@ -1,6 +1,8 @@
-import { Component, OnInit, Injectable } from '@angular/core';
+import { Component, OnInit, AfterViewInit, Injectable } from '@angular/core';
 import { WebService } from '../web.service';
-
+import { DomSanitizer } from '@angular/platform-browser';
+declare var jQuery: any;
+declare var $: any;
 @Injectable()
 
 @Component({
@@ -8,9 +10,9 @@ import { WebService } from '../web.service';
   templateUrl: './homepage.component.html',
   styleUrls: ['./homepage.component.css']
 })
-export class HomepageComponent implements OnInit {
+export class HomepageComponent implements OnInit, AfterViewInit {
   private homeslidebox = [];
-  constructor(private dataService: WebService) { }
+  constructor(private dataService: WebService, public sanitizer: DomSanitizer) { }
 
   ngOnInit() {
 
@@ -25,4 +27,11 @@ export class HomepageComponent implements OnInit {
      });
   }
 
+  ngAfterViewInit() {
+    jQuery(document).ready(function() {
+      $('#homeCarousel').carousel({
+             interval: 2000
+      });
+    });
+   }
 }
