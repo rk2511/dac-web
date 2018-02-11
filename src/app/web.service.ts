@@ -18,4 +18,8 @@ galdata: any;
           return this.http.get('/gallery/' + type).toPromise();
         // return this.http.get('http://localhost:3000/messages').toPromise();
     }
+
+    getHomeSlide() {
+        return this.http.get('/blog').toPromise();
+    }
 }

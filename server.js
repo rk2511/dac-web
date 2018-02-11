@@ -4,10 +4,11 @@ require('./config/config');
 const express = require('express');
 const bodyParser = require('body-parser');
 const {ObjectID} = require('mongodb');
+const path = require('path');
 
 var {mongoose} = require('./db/mongoose');
- var {Gallery} = require('./models/gallery');
-// var {User} = require('./models/user');
+var {Gallery} = require('./models/gallery');
+var {HomeSlide} = require('./models/homeslide');
 
 // var express = require('express');
 var app = express();
@@ -48,8 +49,6 @@ app.use(bodyParser.json());
 
 
 
-
-
 // });
 // db.collection('test').insertOne
 app.use((req,res,next) => {
@@ -75,11 +74,26 @@ app.use(express.static(__dirname + '/dist'));
 
 // });
 
-app.get('/gallery/', (req,res) => {
-    // res.json(messages);
-    console.log('gallery clicked');
-       res.send('hello!');
- });
+// app.get('/gallery/', (req,res) => {
+//     // res.json(messages);
+//     console.log('gallery clicked');
+//        res.send('hello!');
+//  });
+
+// app.get('/blog', (req, res) => {
+// console.log('making main request');
+//     let doc1 = new HomeSlide({
+//     title: 'image4',
+//     imglink: 'https://s3.amazonaws.com/ffe-ugc/intlportal2/dev-temp/en-US/__5951f4d047790.jpg'
+//   });
+
+//   doc1.save((err, results) => {
+//     if (err) {
+//         console.log('error');
+//     }
+//     console.log('op is', results);
+//   });
+// });
 
  app.get('/gallery/:name', (req, res) => {
     var name = req.params.name;
@@ -100,6 +114,9 @@ app.get('/gallery/', (req,res) => {
 
   });
 
+  app.get('*', function (req, res) {
+    res.sendFile(path.join(__dirname + '/dist/index.html'));
+  });
 // app.use(express.static(__dirname + '/dist'));
 
 app.listen(port, () => {

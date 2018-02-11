@@ -1,7 +1,11 @@
-<div id="mySidenav" class="sidenav">
+<div id="mySidenav" class="sidenav col-xs-6">
   <a id="sb1" [routerLink]="['/gallery','wedding']">Wedding shoots</a>
   <a id="sb2" [routerLink]="['/gallery','baby']">Baby shoot</a>
   <a id="sb3" [routerLink]="['/gallery','engage']">Engagement</a>
   <a id="sb4" [routerLink]="['/gallery','whatever']">Video shoots</a>
 </div>
-<router-outlet></router-outlet>
+<div class="container-fluid">
+<div class="row">
+  <router-outlet></router-outlet>
+</div>
+</div>

@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, AfterViewChecked, AfterContentChecked, Injectable  } from '@angular/core';
+import { Component, OnInit, AfterViewInit, AfterViewChecked, AfterContentChecked, Injectable, DoCheck  } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
 import { WebService } from '../web.service';
@@ -14,7 +14,7 @@ declare var $: any;
   templateUrl: './galimage.component.html',
   styleUrls: ['./galimage.component.css']
 })
-export class GalimageComponent implements OnInit, AfterViewInit, AfterViewChecked {
+export class GalimageComponent implements OnInit, AfterViewInit, AfterViewChecked, DoCheck {
   type: {name: string};
   paramsSubscription: Subscription;
   private imagebox = [];
@@ -57,15 +57,8 @@ export class GalimageComponent implements OnInit, AfterViewInit, AfterViewChecke
       (params: Params) => {
         this.type.name = params['name'];
         this.dataService.getGallery(this.type.name).then((data: any) => {
+          this.imagebox.length = 0;
           console.log( 'The gal data is', data);
-        //  this.imagebox.push(data);
-        //  console.log('data type', this.imagebox);
-        //   data.map(item => {
-        //     return {
-        //         courseid: item.courseid,
-        //         name: item.name
-        //     }
-        // }).forEach(item => other.push(item));
         data.map(item => {
           return {
             type: item.type,
@@ -74,10 +67,9 @@ export class GalimageComponent implements OnInit, AfterViewInit, AfterViewChecke
         }).forEach(item => this.imagebox.push(item));
          });
 
-
-
       }
     );
+
   }
 
   ngAfterViewInit() {
@@ -87,25 +79,25 @@ export class GalimageComponent implements OnInit, AfterViewInit, AfterViewChecke
              interval: 1000
       });
       // Handles the carousel thumbnails
-      $('[id^=carousel-selector-]').click(function () {
-        console.log('selecting carousel');
-      const id_selector = $(this).attr('id');
-      try {
-         const id = /-(\d+)$/.exec(id_selector)[1];
-         console.log(id_selector, id);
-         jQuery('#myCarousel').carousel(parseInt(id));
-         console.log('cominghere', id);
-      } catch (e) {
-         console.log('Regex failed!', e);
-      }
-      });
-      // When the carousel slides, auto update the text
-      $('#myCarousel').on('slid.bs.carousel', function (e) {
-              const id = $('.item.active').data('slide-number');
-             $('#carousel-text').html($('#slide-content-' + id).html());
-      });
+      // $('[id^=carousel-selector-]').click(function () {
+      //   console.log('selecting carousel');
+      // const id_selector = $(this).attr('id');
+      // try {
+      //    const id = /-(\d+)$/.exec(id_selector)[1];
+      //    console.log(id_selector, id);
+      //    jQuery('#myCarousel').carousel(parseInt(id));
+      //    console.log('cominghere', id);
+      // } catch (e) {
+      //    console.log('Regex failed!', e);
+      // }
+      // });
+      // // When the carousel slides, auto update the text
+      // $('#myCarousel').on('slid.bs.carousel', function (e) {
+      //         const id = $('.item.active').data('slide-number');
+      //        $('#carousel-text').html($('#slide-content-' + id).html());
+      // });
 
-      });
+    });
    }
 
 
@@ -114,4 +106,19 @@ export class GalimageComponent implements OnInit, AfterViewInit, AfterViewChecke
    }
 
 
-}
+   ngDoCheck() {
+
+   }
+
+   onSelectImage(id) {
+     console.log('Its coming heree', id);
+    jQuery('#myCarousel').carousel(parseInt(id));
+
+    $('#myCarousel').on('slid.bs.carousel', function (e) {
+      const id1 = $('.item.active').data('slide-number');
+     $('#carousel-text').html($('#slide-content-' + id1).html());
+    });
+   }
+
+
+  }
