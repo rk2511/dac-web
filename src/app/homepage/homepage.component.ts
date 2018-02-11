@@ -11,7 +11,7 @@ declare var $: any;
   styleUrls: ['./homepage.component.css']
 })
 export class HomepageComponent implements OnInit, AfterViewInit {
-  private homeslidebox = [];
+  public homeslidebox = [];
   constructor(private dataService: WebService, public sanitizer: DomSanitizer) { }
 
   ngOnInit() {
