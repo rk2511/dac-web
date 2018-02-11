@@ -17,7 +17,7 @@ declare var $: any;
 export class GalimageComponent implements OnInit, AfterViewInit, AfterViewChecked, DoCheck {
   type: {name: string};
   paramsSubscription: Subscription;
-  private imagebox = [];
+  imagebox = [];
   private imagebox1 = [
     // {
     //   id: 0,
