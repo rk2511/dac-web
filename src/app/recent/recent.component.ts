@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+// import { flipster } from 'jquery.flipster';
 declare var jQuery: any;
 declare var $: any;
 @Component({
@@ -11,6 +12,9 @@ export class RecentComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
+    $("#coverflow").flipster();
+
     jQuery(function(){
       jQuery('#R1').YTPlayer();
     });

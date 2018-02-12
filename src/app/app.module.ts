@@ -17,6 +17,7 @@ import { VideosComponent } from './videos/videos.component';
 import { RecentComponent } from './recent/recent.component';
 import { WebService } from './web.service';
 import {HttpClientModule} from '@angular/common/http';
+import { FlipsterComponent } from './flipster/flipster.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +32,8 @@ import {HttpClientModule} from '@angular/common/http';
     BlogComponent,
     ContactComponent,
     VideosComponent,
-    RecentComponent
+    RecentComponent,
+    FlipsterComponent
   ],
   imports: [
     BrowserModule,
