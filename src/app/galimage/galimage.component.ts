@@ -1,9 +1,8 @@
-import { Component, OnInit, AfterViewInit, AfterViewChecked, AfterContentChecked, Injectable, DoCheck  } from '@angular/core';
+import { Component, OnInit, AfterViewInit, AfterViewChecked, AfterContentChecked, Injectable, DoCheck, OnChanges  } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
 import { WebService } from '../web.service';
-// import jQuery from 'jquery';
-// import * from 'jquery';
+
 declare var jQuery: any;
 declare var $: any;
 
@@ -14,8 +13,10 @@ declare var $: any;
   templateUrl: './galimage.component.html',
   styleUrls: ['./galimage.component.css']
 })
-export class GalimageComponent implements OnInit, AfterViewInit, AfterViewChecked, DoCheck {
+
+export class GalimageComponent implements OnInit, OnChanges, AfterViewInit, AfterViewChecked, AfterContentChecked, DoCheck {
   type: {name: string};
+  flag = false;
   paramsSubscription: Subscription;
   imagebox = [];
   private imagebox1 = [
@@ -65,80 +66,66 @@ export class GalimageComponent implements OnInit, AfterViewInit, AfterViewChecke
             imglink: item.imglink
           }
         }).forEach(item => this.imagebox.push(item));
+         }).then(() => {
+            console.log('lets see when this returns', this.imagebox);
+             this.loadFlipster();
+          // setTimeout(() => {
+          //  this.loadFlipster();
+          // }, 2000);
          });
-
       }
     );
 
   }
 
-  ngAfterViewInit() {
-    jQuery(document).ready(function() {
-  console.log('coming inside this part');
-      $('#myCarousel').carousel({
-             interval: 1000
-      });
-      // Handles the carousel thumbnails
-      // $('[id^=carousel-selector-]').click(function () {
-      //   console.log('selecting carousel');
-      // const id_selector = $(this).attr('id');
-      // try {
-      //    const id = /-(\d+)$/.exec(id_selector)[1];
-      //    console.log(id_selector, id);
-      //    jQuery('#myCarousel').carousel(parseInt(id));
-      //    console.log('cominghere', id);
-      // } catch (e) {
-      //    console.log('Regex failed!', e);
-      // }
-      // });
-      // // When the carousel slides, auto update the text
-      // $('#myCarousel').on('slid.bs.carousel', function (e) {
-      //         const id = $('.item.active').data('slide-number');
-      //        $('#carousel-text').html($('#slide-content-' + id).html());
-      // });
+  loadFlipster() {
+              setTimeout(() => {
+          //  this.loadFlipster();
+    console.log('calling flipster');
+    let carousel = $('#carousel').flipster({
+      style: 'carousel',
+      spacing: -0.5,
+       loop: true,
+      click: true,
+      scrollwheel: false,
+     onItemSwitch: function(currentItem) {
+          getCurrentImage(currentItem);
+      }
+  });
 
-    });
-   }
+ let getCurrentImage = function(currentItem) {
+   console.log('the current item is ', currentItem);
+   const img = $(currentItem).find('img').attr('src');
+   $('#bigimg').attr('src', img);
+ };
 
-
-   ngAfterViewChecked() {
-
-   }
-
-
-   ngDoCheck() {
-
-   }
-
-   onSelectImage(id) {
-     
-     const igid = 'ig' + id;
-     console.log('Its coming heree', igid);
-    jQuery('#myCarousel').carousel(parseInt(id));
-
-    $('#myCarousel').on('slid.bs.carousel', function (e) {
-      const id1 = $('.item.active').data('slide-number');
-     $('#carousel-text').html($('#slide-content-' + id1).html());
-    });
-
-    // for modal
-
-    var modal = document.getElementById('myimgModal');
-    var img = document.getElementById(igid);
-    
-    var modalImg = document.getElementById("img01");
-    var captionText = document.getElementById("caption");
-    modal.style.display = "block";
-    (<HTMLImageElement>modalImg).src = (<HTMLImageElement>img).src;
-    // var span = document.getElementsByClassName("close")[0];
-    // (<HTMLElement>span).onclick = function() {
-    // modal.style.display = "none";
-    //   }
-   }
-
-   onModalClose() {
-    var modal = document.getElementById('myimgModal');
-    modal.style.display = "none";
-   }
+ carousel.flipster('index');
+      }, 100);
 
   }
+
+
+  ngAfterViewInit() {
+
+   // this.loadFlipster();
+
+   }
+
+   ngAfterViewChecked() {
+    // this.loadFlipster();
+   }
+
+   ngAfterContentChecked() {
+    // this.loadFlipster();
+   }
+
+   ngDoCheck() {
+     // this.loadFlipster();
+   }
+
+   ngOnChanges() {
+    // this.loadFlipster();
+   }
+}
+
+

@@ -2,12 +2,10 @@
   {{ type.name }} is displaying!!
 </p>
 <app-sidebar></app-sidebar> 
-<div class="container">
+<!-- <div class="container">
   <div id="main_area">
-      <!-- Slider -->
       <div class="row">
           <div class="col-sm-6 col-xs-12" id="slider-thumbs">
-              <!-- Bottom switcher of slider -->
               <ul class="hide-bullets">
                   <li class="col-sm-3 col-xs-4" *ngFor="let data of imagebox; let i = index" style="cursor: pointer;">
                       <a class="thumbnail"  id= "{{'carousel-selector-' + i }}" (click)="onSelectImage(i)">
@@ -18,16 +16,13 @@
           </div>
           <div class="col-sm-6 col-xs-12">
               <div class="col-sm-12 col-xs-12" id="slider">
-                  <!-- Top part of the slider -->
                   <div class="row">
                       <div class="col-sm-12" id="carousel-bounding-box">
                           <div class="carousel slide" id="myCarousel">
-                              <!-- Carousel items -->
                               <div class="carousel-inner" style="max-height:600px">
                                   <div *ngFor="let data of imagebox;let j = index"  class="{{ j == 0 ? 'active item' : 'item'}}" [attr.data-slide-number]= "j">
                                       <img src= "{{ data.imglink }}"></div>
                               </div>
-                              <!-- Carousel nav -->
                               <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
                                   <span class="glyphicon glyphicon-chevron-left"></span>
                               </a>
@@ -39,7 +34,6 @@
                   </div>
               </div>
           </div>
-          <!--/Slider-->
       </div>
   </div>
 </div>
@@ -50,29 +44,57 @@
         <span class="close" (click)="onModalClose()">&times;</span>
         <img class="modal-content" id="img01">
         <div id="caption"></div>
-      </div>
-<!-- <script>
-  jQuery(document).ready(function($) {
-
-$('#myCarousel').carousel({
-       interval: 1000
-});
-
-//Handles the carousel thumbnails
-$('[id^=carousel-selector-]').click(function () {
-var id_selector = $(this).attr("id");
-try {
-   var id = /-(\d+)$/.exec(id_selector)[1];
-   console.log(id_selector, id);
-   jQuery('#myCarousel').carousel(parseInt(id));
-} catch (e) {
-   console.log('Regex failed!', e);
-}
-});
-// When the carousel slides, auto update the text
-$('#myCarousel').on('slid.bs.carousel', function (e) {
-        var id = $('.item.active').data('slide-number');
-       $('#carousel-text').html($('#slide-content-'+id).html());
-});
-});
-</script>  -->
+</div> -->
+<!-- <h3 *ngFor="let data of imagebox; let i = index"> {{ data.imglink }} </h3> -->
+ 
+<div id="carousel">
+    <ul>
+        <li *ngFor="let data of imagebox; let i = index">
+            <img src="{{ data.imglink }}" style="max-height:300px;max-width:300px">
+            <!-- <p> {{ data.imglink }}</p> -->
+        </li>
+        <!-- <li>
+            <img src="assets/b.jpg" style="max-height:300px;max-width:300px">
+         </li>
+        <li>
+            <img src="assets/c.jpg" style="max-height:300px;max-width:300px">
+        </li>
+        <li>
+            <img src="assets/4.jpg" style="max-height:300px;max-width:300px">
+        </li>
+        <li>
+            <img src="assets/footer.jpg" style="max-height:300px;max-width:300px">
+        </li>
+        <li>
+            <img src="assets/s1.jpg" style="max-height:300px;max-width:300px">
+        </li>
+        <li>
+            <img src="assets/s4.jpg" style="max-height:300px;max-width:300px">
+        </li>
+        <li>
+            <img src="assets/a.jpg" style="max-height:300px;max-width:300px">
+        </li>
+        <li>
+            <img src="assets/b.jpg" style="max-height:300px;max-width:300px">
+        </li>
+        <li>
+            <img src="assets/c.jpg" style="max-height:300px;max-width:300px">
+        </li>
+        <li>
+            <img src="assets/4.jpg" style="max-height:300px;max-width:300px">
+        </li>
+        <li>
+            <img src="assets/s1.jpg" style="max-height:300px;max-width:300px">
+        </li> 
+        <li>
+            <img src="assets/s4.jpg" style="max-height:300px;max-width:300px">
+        </li>
+        <li>
+            <img src="assets/4.jpg" style="max-height:300px;max-width:300px">
+        </li> -->
+    </ul>
+</div>
+<div class="container">
+    <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+    <img id="bigimg" style="width:100%">
+</div>
