@@ -97,3 +97,12 @@
     }
 }
 
+
+@media only screen and (min-width: 700px){
+   #bigimg {
+       margin-left:400px;
+       height:450px;
+   }
+}
+
+

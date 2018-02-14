@@ -2,8 +2,14 @@
     <div class="col-sm-8 col-xs-6" class="container-fluid">
         <div class="navbar-header">
             <a class="navbar-brand" href="#">DutchAngle Creations</a>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
         </div>
-        <ul class="nav navbar-nav">
+        <ul class="nav navbar-nav navbar-collapse collapse">
             <li class="active"><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a></li>
             <!-- <li class="menu-item dropdown"><a class="dropdown-toggle" routerLink="/services" routerLinkActive="active" data-toggle="dropdown">Our Services <b class="caret"></b></a>
                 <ul class="dropdown-menu">
@@ -17,11 +23,34 @@
             <li class="menu-item"><a routerLink="/blog" routerLinkActive="active">Blog <i class="fa fa-comments-o"></i></a></li>
             <li class="menu-item"><a routerLink="/gallery" routerLinkActive="active">Gallery <i class="fa fa-picture-o" aria-hidden="true"></i></a></li>
             <li class="menu-item"><a routerLink="/contact" routerLinkActive="active">Contact <i class="fa fa-handshake-o" aria-hidden="true"></i></a></li>
-            <button class="btn btn-success navbar-btn pull-right" data-toggle="modal" data-target="#myModal">Get Quote</button>
-            <app-booking></app-booking>
+            
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="http://www.twitter.com/" title="Twitter" rel="nofollow" target="_blank">
+                        <i class="fa fa-twitter-square fa-lg twitter-blue"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://www.facebook.com/" title="Facebook" rel="nofollow" target="_blank">
+                        <i class="fa fa-facebook-square fa-lg facebook-blue"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://www.instagram.com/" title="Instagram" rel="nofollow" target="_blank">
+                        <i class="fa fa-instagram fa-lg instagram-pink"></i>
+                    </a>
+                </li>
+                <!-- <li>
+                    <form class="navbar-search navbar-form" method="get" action="">
+                        <input type="text" class="form-control" placeholder="Search" name="s">
+                    </form>
+                </li> -->
+            </ul>
         </ul>
+        <button class="btn btn-success navbar-btn" data-toggle="modal" data-target="#myModal">Get Quote</button>
+        <app-booking></app-booking>
     <!-- DROPDOWN LOGIN STARTS HERE  -->
-          <ul id="signInDropdown" class="nav navbar-nav navbar-right">
+          <!-- <ul id="signInDropdown" class="nav navbar-nav navbar-right">
               <li class="dropdown">
                   <button type="button" id="dropdownMenu1" data-toggle="dropdown" class="btn btn-primary navbar-btn dropdown-toggle"><i class="glyphicon glyphicon-user"></i>  <span class="caret"></span></button>
                   <ul class="dropdown-menu">
@@ -53,8 +82,8 @@
                       </li>
                   </ul>
               </li>
-          </ul> 
-          <ul class="nav navbar-nav navbar-right">
+          </ul>  -->
+          <!-- <ul class="nav navbar-nav navbar-right">
             <li>
                 <a href="http://www.twitter.com/" title="Twitter" rel="nofollow" target="_blank">
                     <i class="fa fa-twitter-square fa-lg twitter-blue"></i>
@@ -75,6 +104,6 @@
                     <input type="text" class="form-control" placeholder="Search" name="s">
                 </form>
             </li>
-        </ul>
+        </ul> -->
     </div>
 </div>

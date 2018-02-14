@@ -52,3 +52,10 @@
     font-family: Volkhov, "Times New Roman", sans-serif;
     font-style: italic;
   }
+
+  @media only screen and (max-width: 500px){
+    /* .flipster__item__content {
+        max-height:100px;
+        max-width:100px;
+    } */
+}

@@ -47,16 +47,17 @@
 </div> -->
 <!-- <h3 *ngFor="let data of imagebox; let i = index"> {{ data.imglink }} </h3> -->
 
-<div id="carousel" style="margin-bottom:50px;right:350px">
+<div id="carousel" style="bottom:50px">
     <ul>
           <li *ngFor="let data of imagebox; let i = index">
               <img src="{{ data.imglink }}" style="max-height:150px;max-width:150px">
           </li>
     </ul>
 </div>
-<div style="position:relative;left:600px;bottom:200px">
+<!-- <div class="container" style="height:750px;max-height:600px;margin-left:400px;margin-bottom:50px">
         <img id="bigimg" class="img-responsive" style="width:50%">
-</div>
+</div> -->
+    <img id="bigimg" class="img-responsive" style="margin-bottom:50px;overflow:hidden">
 
 
     <!-- <div style="display:inline-block">
