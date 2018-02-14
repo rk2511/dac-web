@@ -79,7 +79,6 @@ export class GalimageComponent implements OnInit, OnChanges, AfterViewInit, Afte
   }
 
   loadFlipster() {
-    
               setTimeout(() => {
           //  this.loadFlipster();
     console.log('calling flipster');
@@ -100,15 +99,31 @@ export class GalimageComponent implements OnInit, OnChanges, AfterViewInit, Afte
    $('#bigimg').attr('src', img);
  };
 
-  carousel.flipster('index');
+//  $('.flipster-active').removeClass('flipster-active');
+//  $('#carousel').flipster();
+
+ carousel.flipster('index');
+// carousel.flipster('index');
       }, 500);
 
   }
 
 
+
   ngAfterViewInit() {
 
    // this.loadFlipster();
+    // $('#carousel').show(0, function() {
+    // $('#carousel').resize();
+    // });
+    // $('#carousel').flipster();
+    // $('#carousel').flipster('index');
+    $(window).resize(function () {
+      console.log('resize firing');
+      // this.loadFlipster();
+       $('#carousel').flipster();
+     $('#carousel').flipster('index');
+    });
 
    }
 
