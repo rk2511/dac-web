@@ -4,6 +4,9 @@
     margin-top:20px;
 }
 
+.image {
+    display:inline-block;
+}
 .thumbnail {
     padding: 0;
     height: 109px;

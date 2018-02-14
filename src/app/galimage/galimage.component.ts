@@ -79,6 +79,7 @@ export class GalimageComponent implements OnInit, OnChanges, AfterViewInit, Afte
   }
 
   loadFlipster() {
+    
               setTimeout(() => {
           //  this.loadFlipster();
     console.log('calling flipster');
@@ -99,8 +100,8 @@ export class GalimageComponent implements OnInit, OnChanges, AfterViewInit, Afte
    $('#bigimg').attr('src', img);
  };
 
- carousel.flipster('index');
-      }, 100);
+  carousel.flipster('index');
+      }, 500);
 
   }
 

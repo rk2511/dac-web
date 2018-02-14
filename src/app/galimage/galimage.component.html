@@ -46,55 +46,20 @@
         <div id="caption"></div>
 </div> -->
 <!-- <h3 *ngFor="let data of imagebox; let i = index"> {{ data.imglink }} </h3> -->
- 
-<div id="carousel">
+
+<div id="carousel" style="margin-bottom:50px;right:350px">
     <ul>
-        <li *ngFor="let data of imagebox; let i = index">
-            <img src="{{ data.imglink }}" style="max-height:300px;max-width:300px">
-            <!-- <p> {{ data.imglink }}</p> -->
-        </li>
-        <!-- <li>
-            <img src="assets/b.jpg" style="max-height:300px;max-width:300px">
-         </li>
-        <li>
-            <img src="assets/c.jpg" style="max-height:300px;max-width:300px">
-        </li>
-        <li>
-            <img src="assets/4.jpg" style="max-height:300px;max-width:300px">
-        </li>
-        <li>
-            <img src="assets/footer.jpg" style="max-height:300px;max-width:300px">
-        </li>
-        <li>
-            <img src="assets/s1.jpg" style="max-height:300px;max-width:300px">
-        </li>
-        <li>
-            <img src="assets/s4.jpg" style="max-height:300px;max-width:300px">
-        </li>
-        <li>
-            <img src="assets/a.jpg" style="max-height:300px;max-width:300px">
-        </li>
-        <li>
-            <img src="assets/b.jpg" style="max-height:300px;max-width:300px">
-        </li>
-        <li>
-            <img src="assets/c.jpg" style="max-height:300px;max-width:300px">
-        </li>
-        <li>
-            <img src="assets/4.jpg" style="max-height:300px;max-width:300px">
-        </li>
-        <li>
-            <img src="assets/s1.jpg" style="max-height:300px;max-width:300px">
-        </li> 
-        <li>
-            <img src="assets/s4.jpg" style="max-height:300px;max-width:300px">
-        </li>
-        <li>
-            <img src="assets/4.jpg" style="max-height:300px;max-width:300px">
-        </li> -->
+          <li *ngFor="let data of imagebox; let i = index">
+              <img src="{{ data.imglink }}" style="max-height:150px;max-width:150px">
+          </li>
     </ul>
 </div>
-<div class="container">
-    <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
-    <img id="bigimg" style="width:100%">
+<div style="position:relative;left:600px;bottom:200px">
+        <img id="bigimg" class="img-responsive" style="width:50%">
 </div>
+
+
+    <!-- <div style="display:inline-block">
+        <img id="bigimg" style="width:60%">
+    </div> -->
+ 
