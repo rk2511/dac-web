@@ -9,6 +9,7 @@ const path = require('path');
 var {mongoose} = require('./db/mongoose');
 var {Gallery} = require('./models/gallery');
 var {HomeSlide} = require('./models/homeslide');
+var {Recent} = require('./models/recent');
 
 // var express = require('express');
 var app = express();
@@ -59,10 +60,21 @@ app.use((req,res,next) => {
 
 app.use(express.static(__dirname + '/dist'));
 
-// app.get('/', (req,res) => {
-//     let doc1 = new Gallery({
-//     type: 'wedding',
-//     imglink: 'https://wallpapercave.com/wp/OqT3dTT.jpg'
+// app.get('/blog', (req,res) => {
+//   console.log('writing new collection');
+//     let doc1 = new Recent({
+//     title: 'tamil wedding',
+//     client: 'surya & Deepa',
+//     period: 'Feb 2017',
+//     gallink: 'abcd',
+//     imglinks: [
+//       'http://online.thatsmags.com/uploads/content/1504/8696/FightClub.jpg',
+//       'http://img01.ibnlive.in/ibnlive/uploads/2017/01/messi.jpg',
+//       'https://cswarzone.com/wp-content/uploads/2017/01/1-368x148.jpg',
+//       'https://image3.mouthshut.com/images/imagesp/925740313s.jpg',
+//       'https://images5.alphacoders.com/637/thumb-1920-637668.jpg'
+//     ],
+//     createdAt: new Date()
 //   });
 
 //   doc1.save((err, results) => {
@@ -74,6 +86,12 @@ app.use(express.static(__dirname + '/dist'));
 
 // });
 
+// app.get('*', function (req, res) {
+//   //   res.sendFile(path.join(__dirname + '/dist/index.html'));
+//   //  res.sendFile(path.resolve(__dirname +'..','dist', 'index.html'));
+//   res.sendFile(path.resolve(__dirname +'dist', 'index.html'));
+// });
+
 app.get('/homeslide', (req,res) => {
     console.log('homepage clicked');
     HomeSlide.find().then((doc) => {
@@ -81,11 +99,11 @@ app.get('/homeslide', (req,res) => {
           console.log('main slide not fetching');
         return res.status(404).send();
       }
-      console.log('fetch success', doc);
+      console.log('fetch success', typeof(doc));
       res.send(doc);
       
     }).catch((e) => {
-      res.status(400).send();
+      res.status(400).send(e);
     });
  });
 
@@ -104,7 +122,7 @@ app.get('/homeslide', (req,res) => {
 //   });
 // });
 
- app.get('/gallery/:name', (req, res) => {
+ app.get('/gal/:name', (req, res) => {
     var name = req.params.name;
     console.log('getthing to the service here', name);
 
@@ -118,7 +136,7 @@ app.get('/homeslide', (req,res) => {
     res.send(doc);
       
     }).catch((e) => {
-      res.status(400).send();
+      res.status(400).send(e);
     });
 
   });

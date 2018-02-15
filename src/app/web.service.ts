@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import 'rxjs/add/operator/toPromise';
+import 'rxjs/add/operator/map';
 
 @Injectable()
 
@@ -15,7 +16,7 @@ galdata: any;
         //     console.log('The returned data is ', this.galdata);
         //   });
 
-          return this.http.get('/gallery/' + type).toPromise();
+          return this.http.get('/gal/' + type).toPromise();
         // return this.http.get('http://localhost:3000/messages').toPromise();
     }
 

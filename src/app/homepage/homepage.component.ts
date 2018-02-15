@@ -22,8 +22,10 @@ export class HomepageComponent implements OnInit, AfterViewInit {
       return {
         title: item.title,
         imglink: item.imglink
-      }
+      };
     }).forEach(item => this.homeslidebox.push(item));
+     }).catch((err) => {
+       console.log('the error is', err);
      });
   }
 

@@ -118,12 +118,17 @@ export class GalimageComponent implements OnInit, OnChanges, AfterViewInit, Afte
     // });
     // $('#carousel').flipster();
     // $('#carousel').flipster('index');
-    $(window).resize(function () {
-      console.log('resize firing');
-      // this.loadFlipster();
-       $('#carousel').flipster();
-     $('#carousel').flipster('index');
-    });
+
+
+    // $(window).resize(function () {
+    //   console.log('resize firing');
+    //   // this.loadFlipster();
+    //   setTimeout(() => {
+    //     $('#carousel').flipster();
+    //     $('#carousel').flipster('index');
+    //   }, 100);
+
+    // });
 
    }
 
